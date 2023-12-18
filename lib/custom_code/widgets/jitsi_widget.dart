@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom widgets
+import '/custom_code/actions/index.dart'; // Imports custom actions
 import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
@@ -11,8 +12,6 @@ import '../../backend/backend.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom widgets
-
-import 'package:jitsi_meet_flutter_sdk/jitsi_meet_flutter_sdk.dart';
 
 class JitsiWidget extends StatefulWidget {
   const JitsiWidget({
@@ -31,17 +30,8 @@ class JitsiWidget extends StatefulWidget {
 class _JitsiWidgetState extends State<JitsiWidget> {
   final meetingNameController = TextEditingController();
 
-  final jitsiMeet = JitsiMeet();
   void join() {
-    var options = JitsiMeetConferenceOptions(
-      serverURL: "https://likerocket.club",
-      room: meetingNameController.text,
-      token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2RlcmF0b3IiOmZhbHNlLCJhdWQiOiJqaXRzaSIsInJvb20iOiIqIiwiaXNzIjoiTWVkaW5ldCIsInN1YiI6Imxpa2Vyb2NrZXQuY2x1YiIsImV4cCI6MTc1MzQ5ODgxNSwibmJmIjowfQ.duC-u06aK33h4_iyULqjQoesHReJx2OCrDOS9km75zY",
-      userInfo: JitsiMeetUserInfo(
-          displayName: "Flutter user", email: "user@example.com"),
-    );
-    jitsiMeet.join(options);
+    runJitsi();
   }
 
   @override

@@ -59,20 +59,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Stack(
               children: [
-                if (!isWeb)
-                  custom_widgets.JitsiWidget(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: MediaQuery.sizeOf(context).height * 1.0,
-                  ),
-                if (isWeb)
-                  Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: MediaQuery.sizeOf(context).height * 1.0,
-                    child: custom_widgets.JitsiWidgetWeb(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: MediaQuery.sizeOf(context).height * 1.0,
-                    ),
-                  ),
+                custom_widgets.JitsiWidget(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 1.0,
+                ),
               ],
             ),
           ),
